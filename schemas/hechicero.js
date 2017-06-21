@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
 
 var hechiceroSchema = new mongoose.Schema({
-  username : {type: String, unique: true, required: true},
+  username : String,
   pass: String,
   nombre: String,
   previaOcupacion: String,

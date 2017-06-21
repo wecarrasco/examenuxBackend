@@ -12,12 +12,13 @@ exports.login = {
       }
     },
     handler: function(request, reply) {
+      console.log(request.payload.username);
       var pass = String(SHA3(request.payload.pass));
-      hechicero.find({username: request.payload.username, pass: pass}, function(err, empleado){
+      hechicero.find({username: request.payload.username, pass:pass}, function(err, empleado){
           if(!err){
             if(hechicero.length > 0){
               request.cookieAuth.set(hechicero[0]);
-              return reply({username: hechicero[0].username, success:true});
+              return reply({username: hechicero.username, success:true});
             }
             return reply({message: boom.unauthorized('Wrong email or password'), success:false});
           }
