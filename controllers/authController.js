@@ -17,7 +17,7 @@ exports.login = {
           if(!err){
             if(hechicero.length > 0){
               request.cookieAuth.set(hechicero[0]);
-              return reply({username: hechicero[0].username, scope: hechicero[0].scope, success:true});
+              return reply({username: hechicero[0].username, success:true});
             }
             return reply({message: boom.unauthorized('Wrong email or password'), success:false});
           }
