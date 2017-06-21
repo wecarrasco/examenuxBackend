@@ -14,7 +14,7 @@ exports.createHechicero = {
       username : request.payload.username,
       pass: String(SHA3(request.payload.pass)),
       nombre: request.payload.nombre,
-      previaOcupacion: request.payload.previaOcupacion,
+      previaOcupacion: request.payload.ocupacion,
       fechaNacimiento: request.payload.fecha,
       paisOrigen: request.payload.pais,
       religion: request.payload.religion,
